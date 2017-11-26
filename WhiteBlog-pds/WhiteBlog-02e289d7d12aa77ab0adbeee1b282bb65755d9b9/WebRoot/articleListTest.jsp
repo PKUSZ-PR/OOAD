@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="tag-title">
 				<div class="container">
 					<p class="tags" id="post-titles">
-						<a class="Edit_qp selected" href="#">删除文章</a>
+						<a class="Edit_qp selected" href="#">Delete Essay</a>
 <!-- 						<a data-filter=".pt-fashion" href="#">fashion</a> -->
 <!-- 						<a data-filter=".pt-culture" href="#">culture</a> -->
 <!-- 						<a data-filter=".pt-art" href="#">art</a> -->

@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="assets/img/favicon.ico">
-<title>White Blog - 管理员</title>
+<title>White Blog-Administrator</title>
 <!-- Bootstrap core CSS -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 <!-- Font Awesome CSS -->
@@ -117,8 +117,8 @@
 		<div class="container">
 
 			<div class="head-author">
-				<h1 class="author-h1">管理员面板</h1>
-				<p class="lead about-lead">待审核文章.</p>
+				<h1 class="author-h1">Administrator Dashboard</h1>
+				<p class="lead about-lead">To Check List</p>
 			</div>
 
 		</div>
@@ -151,7 +151,7 @@
 
 				<div class="row become-author">
 					<h5>Become an author</h5>
-					<p>Vivamus nec mauris pulvinar leo dignissim sollicitudin eleifend eget velit. Mauris fermentum fringilla lorem, in rutrum massa.</p>
+					<p>It's a wonderful blog to share your life</p>
 					<a href="#"><i class="fa fa-envelope"></i></a>
 				</div>
 			</div>
