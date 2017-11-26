@@ -162,8 +162,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 															<a href="showBlogToModify.action?blogId=${blog.blogId}"><div class="modify"></div></a>
 														</c:when>
 													</c:choose>													
-													<a href="#" class="quick-read qr-not-phone"><i class="fa fa-eye"></i></a>
-													<a href="#" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="<a href='#'><i class='fa fa-facebook'></i></a><a href='#'><i class='fa fa-twitter'></i></a>" class="pis-share"><i class="fa fa-share-alt"></i></a>
+													 
 													<a href="#" class="post-like"><i class="fa fa-heart"></i><span>28</span></a>
 												</div>
 											</div>
@@ -174,9 +173,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 						</s:iterator>
 						
-
-						
-
 						<div class="container-fluid post-video">
 							
 						</div><div class="container-fluid post-sound">
@@ -193,24 +189,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<button type="submit" class="btn btn-link"><i class="fa fa-search"></i></button>
 						</form>
 
-						<ul class="laread-list">
-							<li class="title">CATEGORY</li>
-							<li><a href="#">Branding</a><i class="line"></i></li>
-							<li><a href="#">Design (48)</a><i class="line"></i></li>
-							<li><a href="#">Photography</a><i class="line"></i></li>
-							<li><a href="#">Inspiration</a><i class="line"></i></li>
-							<li><a href="#">Life</a><i class="line"></i></li>
-							<li><a href="#">City</a><i class="line"></i></li>
-						</ul>
-
-						<ul class="laread-list">
-							<li class="title">RECENT POSTS</li>
-							<li><a href="#">The Nature of My Inspiration</a><i class="date">28 June</i></li>
-							<li><a href="#">Sam Feldt - Show Me Love</a><i class="date">27 June</i></li>
-							<li><a href="#">Do You Love Coffee?</a><i class="date">25 June</i></li>
-							<li><a href="#">The Game Before The Game</a><i class="date">23 June</i></li>
-							<li><a href="#">Long Live The Kings</a><i class="date">22 June</i></li>
-						</ul>
 
 						<ul class="laread-list">
 							<li class="title">All TAGS</li>
@@ -340,7 +318,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="modal-content" id="login-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title"><i class="fa fa-unlock-alt"></i>LaRead Sign In</h4>
+					<h4 class="modal-title"><i class="fa fa-unlock-alt"></i>WhiteBlog Sign In</h4>
 				</div>
 				<div class="modal-body">
 					<form action="login.action" method="post">
@@ -362,17 +340,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</form>
 				</div>
 				<div class="modal-footer">
-					<div class="provider">
-						<span>Sign In With</span>
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
+					<div class="provider"> 
 					</div>
 				</div>
 			</div>
 			<div class="modal-content" id="register-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title"><i class="fa fa-lock"></i>LaRead Sign Up</h4>
+					<h4 class="modal-title"><i class="fa fa-lock"></i>WhiteBlog Sign Up</h4>
 				</div>
 				<div class="modal-body">
 					<form action="register.action" method="post">

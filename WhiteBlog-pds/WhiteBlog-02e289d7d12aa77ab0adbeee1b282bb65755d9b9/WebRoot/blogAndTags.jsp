@@ -109,6 +109,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</button>						
 							</div>
 							<a class="modal-form">${sessionScope.loginUser.username}</a>
+															<a href="#" data-toggle="modal" data-target="#logout-form" class="modal-form">
+								<i class="fa fa-power-off"></i></a>
 						</c:otherwise>
 					</c:choose>
 					<button type="button" class="navbar-toggle collapsed menu-collapse" data-toggle="collapse" data-target="#main-nav">
@@ -122,7 +124,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="container">
 			<div class="head-text">
 				<h1>White Blog</h1>
-				<p class="lead-text">Blog. Designed for Read.</p>
+				<p class="lead-text">Blog Designed for Read</p>
 			</div>
 		</div>
 
@@ -148,8 +150,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<span>${blog.time}</span> By <a href="#">${blog.username}</a>
 												</div>
 												<div class="pull-right post-item-social">
-													<a href="#" class="quick-read qr-not-phone"><i class="fa fa-eye"></i></a>
-													<a href="#" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="<a href='#'><i class='fa fa-facebook'></i></a><a href='#'><i class='fa fa-twitter'></i></a>" class="pis-share"><i class="fa fa-share-alt"></i></a>
+													<c:choose>
+														<c:when test="${sessionScope.loginUser!=null && sessionScope.loginUser.username==blog.username}">
+															<a href="showBlogToModify.action?blogId=${blog.blogId}"><div class="modify"></div></a>
+														</c:when>
+													</c:choose>															
 													<a href="#" class="post-like"><i class="fa fa-heart"></i><span>28</span></a>
 												</div>
 											</div>
@@ -179,24 +184,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<button type="submit" class="btn btn-link"><i class="fa fa-search"></i></button>
 						</form>
 
-						<ul class="laread-list">
-							<li class="title">CATEGORY</li>
-							<li><a href="#">Branding</a><i class="line"></i></li>
-							<li><a href="#">Design (48)</a><i class="line"></i></li>
-							<li><a href="#">Photography</a><i class="line"></i></li>
-							<li><a href="#">Inspiration</a><i class="line"></i></li>
-							<li><a href="#">Life</a><i class="line"></i></li>
-							<li><a href="#">City</a><i class="line"></i></li>
-						</ul>
-
-						<ul class="laread-list">
-							<li class="title">RECENT POSTS</li>
-							<li><a href="#">The Nature of My Inspiration</a><i class="date">28 June</i></li>
-							<li><a href="#">Sam Feldt - Show Me Love</a><i class="date">27 June</i></li>
-							<li><a href="#">Do You Love Coffee?</a><i class="date">25 June</i></li>
-							<li><a href="#">The Game Before The Game</a><i class="date">23 June</i></li>
-							<li><a href="#">Long Live The Kings</a><i class="date">22 June</i></li>
-						</ul>
 
 						<ul class="laread-list">
 							<li class="title">ALL TAGS</li>
@@ -385,7 +372,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 
-
+	<!-- logout -->
+	<div class="modal leread-modal fade" id="logout-form" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" id="login-content">
+				<div class="modal-body">
+					<form action="logout.action" method="post">					
+						<div class="modal-body">
+							确认登出当前账户么？
+         				</div>
+						<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">关闭 </button>
+            				<button type="submit" class="btn btn-primary">确定</button>
+        				</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->

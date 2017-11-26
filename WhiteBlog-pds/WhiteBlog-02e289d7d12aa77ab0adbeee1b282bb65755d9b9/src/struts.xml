@@ -23,6 +23,9 @@
 		<action name="review" class="BlogContent" method="review">
 			<result name="success" type="redirectAction">showuncheckblog</result>
 		</action>
+		<action name="delete" class="BlogContent" method="delete">
+			<result name="delete" type="redirectAction">showuncheckblog</result>
+		</action>
 		<action name="searchArticle" class="SearchArticleAction" method="execute">
  			<result name="success">/articleListTest.jsp</result>
 			<result name="error">/404.html</result>

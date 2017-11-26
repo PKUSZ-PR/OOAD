@@ -113,4 +113,14 @@ public class blogContentAction extends ActionSupport{
 		blogContentManage.setupdateBlog(blog);
 		return SUCCESS;
 	}
+	
+	public String delete(){
+		Map<String,Object> session = ActionContext.getContext().getSession();
+		Integer blogID = (Integer)session.get("blogId");
+		Blog blog = blogContentManage.findById(blogID);
+		blog.setFilterwords(3);
+		blogContentManage.setupdateBlog(blog);
+		return "delete";
+	}
+	
 }

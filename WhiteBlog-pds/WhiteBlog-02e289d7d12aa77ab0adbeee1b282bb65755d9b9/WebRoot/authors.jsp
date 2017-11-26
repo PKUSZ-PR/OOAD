@@ -104,6 +104,8 @@
 								</button>						
 							</div>
 							<a class="modal-form">${sessionScope.loginUser.username}</a>
+															<a href="#" data-toggle="modal" data-target="#logout-form" class="modal-form">
+								<i class="fa fa-power-off"></i></a>
 						</c:otherwise>
 					</c:choose>
 					<button type="button" class="navbar-toggle collapsed menu-collapse" data-toggle="collapse" data-target="#main-nav">
@@ -136,13 +138,9 @@
 							<div class="author-subdetail">
 								<h2><a href="#"></a></h2>
 								<p class="info-small">${blog.time}<span><i class="fa fa-map-marker"></i></p>
-								<div class="author-connection">
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-envelope"></i></a>
-								</div>
+
 								<p class="author-bio">${blog.title}</p>							
-								<button type="submit" class="btn btn-grey btn-outline btn-rounded" name="id" value="${blog.blogId}">查看文章</button>													
+								<button type="submit" class="btn btn-grey btn-outline btn-rounded" name="id" value="${blog.blogId}">Check</button>													
 							</div>
 						</div>
 					</article>	
@@ -169,7 +167,24 @@
 			</div>
 		</footer>
 	</div>
-
+	<!-- logout -->
+	<div class="modal leread-modal fade" id="logout-form" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" id="login-content">
+				<div class="modal-body">
+					<form action="logout.action" method="post">					
+						<div class="modal-body">
+							确认登出当前账户么？
+         				</div>
+						<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">关闭 </button>
+            				<button type="submit" class="btn btn-primary">确定</button>
+        				</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->

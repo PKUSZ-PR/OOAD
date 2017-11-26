@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="assets/img/favicon.ico">
-<title>White Blog - 博文内容</title>
+<title>White Blog - Blog Content</title>
 <!-- Bootstrap core CSS -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 <!-- Font Awesome CSS -->
@@ -121,6 +121,8 @@
 								</button>						
 							</div>
 							<a class="modal-form">${sessionScope.loginUser.username}</a>
+								<a href="#" data-toggle="modal" data-target="#logout-form" class="modal-form">
+								<i class="fa fa-power-off"></i></a>
 						</c:otherwise>
 					</c:choose>
 					<button type="button" class="navbar-toggle collapsed menu-collapse" data-toggle="collapse" data-target="#main-nav">
@@ -152,14 +154,16 @@
 								</div>
 								<div class="post-item-info no-border clearfix">									
 									<div class="post-item-social">		 												
-										<a href="#"><i class="fa fa-google-plus"></i></a>
-										<a href="#"><i class="fa fa-heart"></i> 18</a>
+										 
+										 
 									</div>
 								</div>
 								<form action="review.action">
-									<button type="submit" class="btn btn-grey btn-outline btn-rounded">审核通过</button>
+									<button type="submit" class="btn btn-grey btn-outline btn-rounded">Past</button>
 								</form>
-								<button class="btn btn-grey btn-outline btn-rounded">审核未通过</button>
+								<form action="delete.action">
+								<button class="btn btn-grey btn-outline btn-rounded">Delete</button>
+								</form>
 							</div>
 
 							
@@ -167,7 +171,7 @@
 								<div class="author">
 									<a class="author-photo" href="#"><img src="assets/img/profil_photo-04.png" alt=""></a>
 									<div class="author-body">
-										<h4 class="author-name">作者：${req.username}</h4>
+										<h4 class="author-name">Author：${req.username}</h4>
 									</div>
 									<div class="author-connection">
 										<a href="#"><i class="fa fa-twitter"></i></a>
@@ -286,6 +290,25 @@
 					<span>Share on</span>
 					<a href='#'><i class='fa fa-facebook'></i></a>
 					<a href='#'><i class='fa fa-twitter'></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- logout -->
+	<div class="modal leread-modal fade" id="logout-form" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" id="login-content">
+				<div class="modal-body">
+					<form action="logout.action" method="post">					
+						<div class="modal-body">
+							确认登出当前账户么？
+         				</div>
+						<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">关闭 </button>
+            				<button type="submit" class="btn btn-primary">确定</button>
+        				</div>
+					</form>
 				</div>
 			</div>
 		</div>
