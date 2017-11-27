@@ -156,7 +156,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        </s:div>   
 	        <s:div>                          
 	          	<p>文章内容</p>             	          	 
-	          	<s:textarea id="elm1" name="content" class="xheditor" rows="12" cols="80" style="width: 100%"></s:textarea>
+	          	 <%-- <s:textarea id="elm1" name="content" class="xheditor" rows="12" cols="80" style="width: 100%"></s:textarea> --%>
+	          	<s:textarea id="elm1" name="content"  rows="12" cols="80" style="width: 100%"></s:textarea> 
 	          	<s:fielderror cssStyle="color:red;font-size:8pt;list-style-type:none;"> 
 	    		  <s:param>content</s:param>    
 	   		   </s:fielderror>                        
