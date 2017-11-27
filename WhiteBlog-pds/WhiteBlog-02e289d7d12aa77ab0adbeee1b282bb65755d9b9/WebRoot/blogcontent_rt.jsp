@@ -121,6 +121,9 @@
 								</button>						
 							</div>
 							<a class="modal-form">${sessionScope.loginUser.username}</a>
+								<a href="#" data-toggle="modal" data-target="#logout-form" class="modal-form">
+								<i class="fa fa-power-off"></i>
+							</a>							
 						</c:otherwise>
 					</c:choose>
 					<button type="button" class="navbar-toggle collapsed menu-collapse" data-toggle="collapse" data-target="#main-nav">
@@ -239,7 +242,7 @@
 																			<input style="display:none;" class="form-control" aria-hidden="true"  readonly="true" value="${req.blog.userId}" name="id" class="modal-title" id="id" />
 																			<input style="display:none;" class="form-control" aria-hidden="true"  readonly="true" value="${req.blog.blogId}" name="bid" class="modal-title" id="bid" />  
 																		</div>
-																		<!-- 模态框的内容部分 -->
+																		<!-- 模态框的内容部分 --> 
 																		<div class="modal-header">
 																			<c:forEach var="tag" items="${btl}" > 
 																				<p class="btn btn-default btn-grey btn-outline" id="${tag.typename}" onclick="getTypename(id)">${tag.typename}</p>  
@@ -272,13 +275,12 @@
 								<div class="author">
 									<a class="author-photo" href="#"><img src="assets/img/profil_photo-04.png" alt=""></a>
 									<div class="author-body">
-										<h4 class="author-name">作者：${req.username}</h4>
+										<h4 class="author-name">Author：${req.username}</h4>
 										<h4 class="author-name">${sessionScope.loginUser.username}</h4>
 										<a href="#">view all post</a>
 									</div>
 									<div class="author-connection">
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-envelope"></i></a>
+										 
 									</div>
 								</div>
 							</div>
@@ -286,9 +288,9 @@
 							<div class="comment-box">
 								
 								<div class="comment-tab">
-									<a href="#" class="comment-info">Comments (28)</a>
+									<a href="#" class="comment-info">Comments</a>
 									<i class="i">|</i>
-									<a href="#" class="comment-info"><i class="fa fa-comments"></i> Show all</a>
+									<!-- <a href="#" class="comment-info"><i class="fa fa-comments"></i> Show all</a> -->
 								</div>
 
 								<div class="comment-block">
@@ -326,10 +328,7 @@
 			<div class="container text-center">
 				<div class="footer-logo"><img src="assets/img/logo-black.png" alt=""></div>
 				<p class="laread-motto">Designed for Read.</p>
-				<div class="laread-social">
-					<a href="#" class="fa fa-twitter"></a>
-					<a href="#" class="fa fa-facebook"></a>
-					<a href="#" class="fa fa-pinterest"></a>
+				<div class="laread-social"> 
 				</div>
 			</div>
 		</footer>
@@ -427,6 +426,26 @@
 					<span>Share on</span>
 					<a href='#'><i class='fa fa-facebook'></i></a>
 					<a href='#'><i class='fa fa-twitter'></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- logout -->
+	<div class="modal leread-modal fade" id="logout-form" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" id="login-content">
+				<div class="modal-body">
+					<form action="logout.action" method="post">					
+						<div class="modal-body">
+							确认登出当前账户么？
+         				</div>
+						<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">关闭 </button>
+            				<button type="submit" class="btn btn-primary">确定</button>
+        				</div>
+					</form>
 				</div>
 			</div>
 		</div>

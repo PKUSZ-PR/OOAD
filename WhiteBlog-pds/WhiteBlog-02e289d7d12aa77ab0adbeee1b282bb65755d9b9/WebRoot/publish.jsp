@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <base href="<%=basePath%>">
     
-    <title>White Blog - Publish Blog</title>
+    <title>White Blog - 发表博文</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -129,8 +129,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<i class="fa fa-envelope"></i>
 								</button>						
 							</div>
-							<a class="modal-form">${sessionScope.loginUser.username}</a> 
-						</c:otherwise> 
+							<a class="modal-form">${sessionScope.loginUser.username}</a>
+									<a href="#" data-toggle="modal" data-target="#logout-form" class="modal-form">
+								<i class="fa fa-power-off"></i>	</a>
+						</c:otherwise>
 					</c:choose>
 					<button type="button" class="navbar-toggle collapsed menu-collapse" data-toggle="collapse" data-target="#main-nav">
 						<span class="sr-only">Toggle navigation</span>
@@ -154,8 +156,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        </s:div>   
 	        <s:div>                          
 	          	<p>文章内容</p>             	          	 
-	          	<!-->   <s:textarea id="elm1" name="content" class="xheditor" rows="12" cols="80" style="width: 100%"></s:textarea> <-->
-	          	<s:textarea id="elm1" name="content" rows="12" cols="80" style="width: 100%"></s:textarea>
+	          	<s:textarea id="elm1" name="content" class="xheditor" rows="12" cols="80" style="width: 100%"></s:textarea>
 	          	<s:fielderror cssStyle="color:red;font-size:8pt;list-style-type:none;"> 
 	    		  <s:param>content</s:param>    
 	   		   </s:fielderror>                        
@@ -181,24 +182,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   </s:form>		
 		</s:div>		
 	</s:div> 
-	<!-- logout -->
-	<div class="modal leread-modal fade" id="logout-form" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content" id="login-content">
-				<div class="modal-body">
-					<form action="logout.action" method="post">					
-						<div class="modal-body">
-							确认登出当前账户么？
-         				</div>
-						<div class="modal-footer">
-            				<button type="button" class="btn btn-default" data-dismiss="modal">关闭 </button>
-            				<button type="submit" class="btn btn-primary">确定</button>
-        				</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>	
+	
 	<!-- Login Modal -->
 	<div class="modal leread-modal fade" id="login-form" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog">
@@ -228,9 +212,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="modal-footer">
 					<div class="provider">
-						<span>Sign In With</span>
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
+						 
 					</div>
 				</div>
 			</div>
@@ -360,7 +342,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					}
 					var _tr = '<li class="pt-fashion pt-culture" id="blog-'+list.blogId+'"><div class="container"><h5><i class="'+delete_icon+'" style='+color_str+'></i>'+
 					'<a class="delete_qp" href="'+actionStr+'"'+onclick_str+'>'+list.title+'</a></h5><div class="post-subinfo">'+
-					'<span>'+list.time+'</span>   •   <span>2 Comments</span></div></div></li>';
+					'<span>'+list.time+'</span>   •   <span>2 Comments</span></div></div></li>';
 					$("#delete_vision").append(_tr);				
 				})
 				}

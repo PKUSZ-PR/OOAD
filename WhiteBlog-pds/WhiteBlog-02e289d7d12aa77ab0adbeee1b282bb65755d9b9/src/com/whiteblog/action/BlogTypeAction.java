@@ -51,7 +51,7 @@ public class BlogTypeAction {
 	public String addTags(){
 		String str = mesContent2;  
 		
-		System.out.println(id);
+		System.out.println("mesConent2 is that:"+bid);
 		
 			List<Blogtype> btl = blogtypeService.getBlogtypeDAO().findByTypename(str);
 			if(btl.size() < 1) {
@@ -59,7 +59,7 @@ public class BlogTypeAction {
 				bt.setUserId(id);
 				bt.setTypename(str);
 				blogtypeService.getBlogtypeDAO().save(bt);
-				Blog b = blogManager.getBlogDao().findById(id);
+				Blog b = blogManager.getBlogDao().findById(bid);
 				List<Blogtype> list = blogtypeService.getBlogtypeDAO().findByTypename(str);
 				bt = list.get(list.size() - 1);
 				b.setTypeId(bt.getTypeId());
@@ -72,7 +72,7 @@ public class BlogTypeAction {
 						bt.setUserId(id);
 						bt.setTypename(str);
 						blogtypeService.getBlogtypeDAO().save(bt);
-						Blog b = blogManager.getBlogDao().findById(id);
+						Blog b = blogManager.getBlogDao().findById(bid);
 						List<Blogtype> list = blogtypeService.getBlogtypeDAO().findByTypename(str);
 						bt = list.get(list.size() - 1);
 						b.setTypeId(bt.getTypeId());

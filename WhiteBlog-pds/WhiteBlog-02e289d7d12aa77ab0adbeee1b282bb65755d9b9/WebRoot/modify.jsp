@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <base href="<%=basePath%>">
     
-    <title>White Blog - 修改博文</title>
+    <title>White Blog - Modify Your Blog</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -131,6 +131,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</button>						
 							</div>
 							<a class="modal-form">${sessionScope.loginUser.username}</a>
+								<a href="#" data-toggle="modal" data-target="#logout-form" class="modal-form">
+								<i class="fa fa-power-off"></i>
+							</a>							
 						</c:otherwise>
 					</c:choose>
 					<button type="button" class="navbar-toggle collapsed menu-collapse" data-toggle="collapse" data-target="#main-nav">
@@ -156,7 +159,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        </s:div>   
 	        <s:div>                          
 	          	<p>文章内容</p>             	          	 
-	          	<s:textarea id="elm1" name="currentBlog.content" class="xheditor" rows="12" cols="80" style="width: 100%" value="%{blog.content}"></s:textarea>
+	          	<!--><s:textarea id="elm1" name="currentBlog.content" class="xheditor" rows="12" cols="80" style="width: 100%" value="%{blog.content}"></s:textarea><-->
+	          	<s:textarea id="elm1" name="currentBlog.content"  rows="12" cols="80" style="width: 100%" value="%{blog.content}"></s:textarea>
 	          	<s:fielderror cssStyle="color:red;font-size:8pt;list-style-type:none;"> 
 	    		  <s:param>content</s:param>    
 	   		   </s:fielderror>                        
@@ -190,7 +194,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="modal-content" id="login-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title"><i class="fa fa-unlock-alt"></i>LaRead Sign In</h4>
+					<h4 class="modal-title"><i class="fa fa-unlock-alt"></i>WhiteBlog Sign In</h4>
 				</div>
 				<div class="modal-body">
 					<form action="login.action" method="post">
@@ -213,9 +217,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="modal-footer">
 					<div class="provider">
-						<span>Sign In With</span>
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
+						
 					</div>
 				</div>
 			</div>
@@ -269,7 +271,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		});
 	</script>
 	
-	
+	<!-- logout -->
+	<div class="modal leread-modal fade" id="logout-form" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content" id="login-content">
+				<div class="modal-body">
+					<form action="logout.action" method="post">					
+						<div class="modal-body">
+							确认登出当前账户么？
+         				</div>
+						<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">关闭 </button>
+            				<button type="submit" class="btn btn-primary">确定</button>
+        				</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>	
 	
 	<script type="text/javascript">
 		var t
