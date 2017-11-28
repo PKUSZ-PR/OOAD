@@ -29,11 +29,21 @@ public class ShowBlogList extends ActionSupport{
 		}else{
 //<<<<<<< HEAD
 			User user = (User) session.get("loginUser");	
+			int [] idx = new int[100];
+			int j = 0;
 			blogList=showBlogListService.findByUserId(user.getUserId());
+			List<Blog> bl = showBlogListService.getAllBlog();
 			for(int i=0;i<blogList.size();i++){
-				if(blogList.get(i).getFilterwords()==0){
+				if(blogList.get(i).getFilterwords()==0 || blogList.get(i).getFilterwords() == 3){
 					blogList.remove(i);
 					i--;
+				}else{
+					idx[j++] = i;
+				}
+			}
+			for (Blog b: bl){
+				if(b.getFilterwords() != 0 && b.getFilterwords() != 3){
+					blogList.add(b);
 				}
 			}
 			//HttpServletRequest request=ServletActionContext.getRequest();   

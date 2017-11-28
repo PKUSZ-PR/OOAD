@@ -105,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<nav class="navbar navbar-fixed-top nav-down navbar-laread">
 				<div class="container">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="medium-image-v1-2.html"><img height="64" src="assets/img/logo-light.png" alt=""></a>
+						<a class="navbar-brand" href="./index_rt.jsp"><img height="64" src="assets/img/logo-light.png" alt=""></a>
 					</div>
 								
 					<c:choose>
@@ -114,6 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<i class="fa fa-user"></i>
 							</a>									
 						</c:when>
+						
 						<c:otherwise>
 							<div class="get-post-titles" style="margin-left:20px">
 								<button  type="button" class="close_qp navbar-toggle push-navbar-full" data-navbar-type="article">
@@ -159,8 +160,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        </s:div>   
 	        <s:div>                          
 	          	<p>文章内容</p>             	          	 
-	          	<!--><s:textarea id="elm1" name="currentBlog.content" class="xheditor" rows="12" cols="80" style="width: 100%" value="%{blog.content}"></s:textarea><-->
-	          	<s:textarea id="elm1" name="currentBlog.content"  rows="12" cols="80" style="width: 100%" value="%{blog.content}"></s:textarea>
+	          	 <s:textarea id="elem1" name="content" rows="12" cols="80" value="%{blog.content}" style="width:100%;"></s:textarea>
+	          	<!-- <textarea id="elm1" name="currentBlog.content"  rows="12" cols="80" style="width: 100%" value="%{blog.content}"></textarea> -->
 	          	<s:fielderror cssStyle="color:red;font-size:8pt;list-style-type:none;"> 
 	    		  <s:param>content</s:param>    
 	   		   </s:fielderror>                        

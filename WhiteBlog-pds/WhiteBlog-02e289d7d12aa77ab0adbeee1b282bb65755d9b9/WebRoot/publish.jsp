@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <base href="<%=basePath%>">
     
-    <title>White Blog - 发表博文</title>
+    <title>White Blog - Publish Blog</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -157,7 +157,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        <s:div>                          
 	          	<p>文章内容</p>             	          	 
 	          	 <%-- <s:textarea id="elm1" name="content" class="xheditor" rows="12" cols="80" style="width: 100%"></s:textarea> --%>
-	          	<s:textarea id="elm1" name="content"  rows="12" cols="80" style="width: 100%"></s:textarea> 
+	          	<s:textarea id="elem1" name="content" rows="12" cols="80" style="width:100%;"></s:textarea>
 	          	<s:fielderror cssStyle="color:red;font-size:8pt;list-style-type:none;"> 
 	    		  <s:param>content</s:param>    
 	   		   </s:fielderror>                        
