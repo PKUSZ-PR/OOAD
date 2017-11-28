@@ -113,8 +113,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<a href="#" data-toggle="modal" data-target="#login-form" class="modal-form">
 								<i class="fa fa-user"></i>
 							</a>									
-						</c:when>
-						
+						</c:when >
+<%-- 						<c:when test="${sessionScope.loginUser != null && sessionScope.loginUser.username ne blog.username} }">
+							<div class="get-post-titles" style="margin-left:20px">
+								<button  type="button" class="close_qp navbar-toggle push-navbar-full" data-navbar-type="article">
+									<i class="fa fa-bars"></i>
+								</button>
+							</div>		
+							<div class="get-post-titles">					
+								<button id="notice" type="button" class="navbar-toggle push-navbar" data-navbar-type="default">
+									<i id="checkicon" class="fa fa-bell-o"></i>
+								</button>						
+							</div>
+							<div class="get-post-titles" style="margin-right:10px">					
+								<button type="button" class="navbar-toggle push-navbar-undo" data-navbar-type="default" onclick="location.href='showMailList.action'">
+									<i class="fa fa-envelope"></i>
+								</button>						
+							</div>							
+						</c:when> --%>
 						<c:otherwise>
 							<div class="get-post-titles" style="margin-left:20px">
 								<button  type="button" class="close_qp navbar-toggle push-navbar-full" data-navbar-type="article">
