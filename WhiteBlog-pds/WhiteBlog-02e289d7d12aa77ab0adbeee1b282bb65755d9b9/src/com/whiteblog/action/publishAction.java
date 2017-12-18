@@ -100,9 +100,11 @@ public class publishAction extends ActionSupport{
 			List<String> filterWords = fileManagerImpl.getWords();
 			System.out.println("[filterWords size]"+filterWords.size());
 			blog.setFilterwords(1);
+			System.out.println("filterwords "+filterWords.get(1));
 			for(int i=0;i<filterWords.size();i++){
-				if(content.contains(filterWords.get(i))){
+				if(content.contains(filterWords.get(i).replace("\n", ""))){
 					hint="文章中包含敏感词！";
+					System.out.println(hint);
 					blog.setFilterwords(0);
 					break;
 				}else{

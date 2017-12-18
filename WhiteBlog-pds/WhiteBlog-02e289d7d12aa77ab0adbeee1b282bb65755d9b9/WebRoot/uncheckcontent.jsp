@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -63,7 +63,7 @@
 			<div class="tag-title">
 				<div class="container">
 					<p class="tags" id="post-titles">
-						<a class="Edit_qp selected" href="#">删除文章</a>
+						<a class="Edit_qp selected" href="#">Delete Blog</a>
 					</p>
 				</div>
 			</div>
@@ -302,11 +302,11 @@
 				<div class="modal-body">
 					<form action="logout.action" method="post">					
 						<div class="modal-body">
-							确认登出当前账户么？
+						log out?
          				</div>
 						<div class="modal-footer">
-            				<button type="button" class="btn btn-default" data-dismiss="modal">关闭 </button>
-            				<button type="submit" class="btn btn-primary">确定</button>
+            				<button type="button" class="btn btn-default" data-dismiss="modal">Close </button>
+            				<button type="submit" class="btn btn-primary">Yes</button>
         				</div>
 					</form>
 				</div>

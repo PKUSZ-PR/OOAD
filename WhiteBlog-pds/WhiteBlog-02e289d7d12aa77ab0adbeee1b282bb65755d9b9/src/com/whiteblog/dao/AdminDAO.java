@@ -18,6 +18,7 @@ import com.whiteblog.entity.Admin;
  * 
  * @see com.whiteblog.entity.Admin
  * @author MyEclipse Persistence Tools
+ * log: the logger to save the message by Factory
  */
 public class AdminDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(AdminDAO.class);
@@ -28,7 +29,10 @@ public class AdminDAO extends HibernateDaoSupport {
 	protected void initDao() {
 		// do nothing
 	}
-
+	/**
+	 * Save entity info to DB
+	 * @param transientInstance: the entity to be save
+	 */
 	public void save(Admin transientInstance) {
 		log.debug("saving Admin instance");
 		try {
@@ -39,7 +43,10 @@ public class AdminDAO extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-
+	/**
+	 * Delete entity info from DB
+	 * @param persistentInstance the entity to be deleted
+	 */
 	public void delete(Admin persistentInstance) {
 		log.debug("deleting Admin instance");
 		try {
@@ -50,7 +57,11 @@ public class AdminDAO extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-
+	/**
+	 * Find Admin Entity according to id
+	 * @param id
+	 * @return return a Admin Entity that the user wants
+	 */
 	public Admin findById(java.lang.Integer id) {
 		log.debug("getting Admin instance with id: " + id);
 		try {
@@ -62,7 +73,11 @@ public class AdminDAO extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-
+	/**
+	 * Find Admin Entity by Entity
+	 * @param instance
+	 * @return a List with Admin entity
+	 */
 	public List<Admin> findByExample(Admin instance) {
 		log.debug("finding Admin instance by example");
 		try {
@@ -121,7 +136,10 @@ public class AdminDAO extends HibernateDaoSupport {
 			throw re;
 		}
 	}
-
+	/**
+	 * 
+	 * @param instance the entity that to be modified
+	 */
 	public void attachDirty(Admin instance) {
 		log.debug("attaching dirty Admin instance");
 		try {

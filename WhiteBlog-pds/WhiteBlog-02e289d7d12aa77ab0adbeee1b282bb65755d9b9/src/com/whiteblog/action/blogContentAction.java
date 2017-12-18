@@ -1,5 +1,8 @@
 package com.whiteblog.action;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.List;
 import java.util.Map;
 
@@ -61,6 +64,14 @@ public class blogContentAction extends ActionSupport{
 		if(ins == null)
 			return FAIL;
 		String username = ins.getUsername();
+		try {
+			String ct = URLEncoder.encode(ins.getContent(), "UTF-8");
+			ct = URLDecoder.decode(ct, "GBK");
+			ins.setContent(ct);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println(username + " and " + ins.getContent() + " BlogContent");		
 		
 		BlogContentForm blogContentForm = new BlogContentForm(ins, username); 		

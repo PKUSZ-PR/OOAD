@@ -8,7 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Blog entity. @author MyEclipse Persistence Tools
+ * Blog entity.
+ *  @author MyEclipse Persistence Tools
+ *  Date: 2017-11-1
  */
 @Entity
 @Table(name = "blog", catalog = "whiteblog")

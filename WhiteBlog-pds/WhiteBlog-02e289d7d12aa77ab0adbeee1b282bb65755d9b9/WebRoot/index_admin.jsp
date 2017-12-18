@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="tag-title">
 				<div class="container">
 					<p class="tags" id="post-titles">
-						<a class="Edit_qp selected" href="#">删除文章</a>
+						<a class="Edit_qp selected" href="#">Delete Blog</a>
 					</p>
 				</div>
 			</div>
@@ -479,7 +479,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<script type ="text/javascript">
 	function delete_row(delete_id){
-		if(confirm("确定要删除？")){
+		if(confirm("Delete it?")){
 			$.ajax({
 				url:"deleteBlog.action?id="+delete_id,
 				type:"POST",
@@ -488,7 +488,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					if(data == -1){
 						$("li").remove("#blog-"+delete_id);
 						//$(delete_id).parent().parent().parent().remove();
-						window.alert("删除成功");
+						window.alert("Deleted");
 					}else{
 						window.alert("删除失败");
 					}
